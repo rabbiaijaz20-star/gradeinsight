@@ -88,7 +88,7 @@ Raw text:
 \"\"\"{raw_text}\"\"\"
 """
     response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model="model="openai/gpt-oss-120b",",
         messages=[{"role": "user", "content": prompt}],
         temperature=0,
     )
@@ -173,7 +173,7 @@ and point to which subject(s) look most likely to be entered incorrectly.
 Keep it under 150 words.
 """
     response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model="model="openai/gpt-oss-120b",",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.3,
     )
@@ -251,7 +251,7 @@ if st.session_state.index is not None:
             relevant_chunks = retrieve(question, st.session_state.all_chunks, st.session_state.index, embedder)
             context = "\n\n".join(relevant_chunks)
             answer = client.chat.completions.create(
-                model="llama-3.3-70b-versatile",
+                model="model="openai/gpt-oss-120b",",
                 messages=[{"role": "user", "content": f"Context:\n{context}\n\nQuestion: {question}\nAnswer clearly and briefly."}],
                 temperature=0.3,
             ).choices[0].message.content
