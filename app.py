@@ -88,7 +88,7 @@ Raw text:
 \"\"\"{raw_text}\"\"\"
 """
     response = client.chat.completions.create(
-        model="model="openai/gpt-oss-120b",",
+        model="model="openai/gpt-oss-120b",
         messages=[{"role": "user", "content": prompt}],
         temperature=0,
     )
